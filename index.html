@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gleydson Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS para o cabeçalho */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-family: 'Press Start 2P', cursive; /* Fonte chamativa */
+            transition: background-color 0.3s ease-in-out;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        header:hover {
+            background-color: #555;
+        }
+        .login {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+        .login input[type="text"],
+        .login input[type="password"],
+        .login input[type="submit"] {
+            width: 200px;
+            padding: 0.5rem;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+        }
+        .login input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            cursor: pointer;
+        }
+        .login input[type="submit"]:hover {
+            background-color: #555;
+        }
+        /* Estilos CSS para as seções de novidades */
+        .platform {
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease-in-out;
+            text-align: center; /* Centraliza o conteúdo das seções */
+        }
+        .platform:hover {
+            transform: scale(1.05);
+        }
+        .platform h2 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease-in-out;
+            text-align: center; /* Centraliza o texto */
+        }
+        .platform .news {
+            background-color: #444;
+            border-radius: 5px;
+            padding: 1rem;
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .platform .news:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .platform .news h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease-in-out;
+        }
+        .platform .news p {
+            margin-bottom: 0.5rem;
+        }
+        .platform .news a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        .platform .news a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        /* Estilos CSS para as imagens */
+        .platform .news img {
+            max-width: 100%;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        /* Estilos CSS para a barra de pesquisa */
+        .search-bar {
+            margin-top: 1rem;
+            text-align: center;
+        }
+        .search-bar input[type="text"] {
+            width: 300px;
+            padding: 0.5rem;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #333;
+        }
+        .search-bar input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .search-bar input[type="submit"]:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gleydson Games</h1>
+        <div class="login">
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Usuário" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class="search-bar">
+            <form action="/search" method="get">
+                <input type="text" name="q" placeholder="Pesquisar...">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="platform">
+            <h2>Novidades PlayStation</h2>
+            <!-- Conteúdo omitido para brevidade -->
+        </section>
+
+        <section class="platform">
+            <h2>Novidades Xbox</h2>
+            <!-- Conteúdo omitido para brevidade -->
+        </section>
+
+        <section class="platform">
+            <h2>Novidades Nintendo</h2>
+            <!-- Conteúdo omitido para brevidade -->
+        </section>
+    </div>
+</body>
+</html>
+
+
+
