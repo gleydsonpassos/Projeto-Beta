@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gleydson Games</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS para o cabeçalho */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #fff;
+            overflow-x: hidden; /* Impede a rolagem horizontal */
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00); /* Fundo animado */
+            background-size: 400% 400%; /* Tamanho do gradiente */
+            animation: gradientBackground 10s ease infinite; /* Animação do fundo */
+        }
+        @keyframes gradientBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        .top-bar {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+        .top-bar a:hover {
+            color: #4caf50;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            font-family: 'Press Start 2P', cursive; /* Fonte chamativa */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header h1 {
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+        }
+        header h1:hover {
+            color: #4caf50;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav li {
+            margin-right: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+            transition: color 0.3s ease-in-out;
+        }
+        nav a:hover {
+            color: #4caf50;
+        }
+        /* Estilos para o conteúdo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .news-item {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .news {
+            background-color: #444;
+            border-radius: 5px;
+            padding: 20px;
+            flex-basis: 45%; /* Tamanho dos itens de notícias */
+        }
+        .news h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+        .news p {
+            margin-bottom: 10px;
+        }
+        .news img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+        /* Estilos para os comentários */
+        .comments {
+            background-color: #444;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        .comment {
+            border-bottom: 1px solid #666;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        .comment:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        .comment h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        .comment p {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        /* Estilos para o rodapé */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            font-size: 14px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <a href="pagina_registro.html">Registre-se para criar uma conta</a>
+    </div>
+    <header>
+        <h1>Gleydson Games</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
+        <div class="login">
+            <form action="/login" method="post">
+                <input type="text" name="username" placeholder="Usuário" required>
+                <input type="password" name="password" placeholder="Senha" required>
+                <input type="submit" value="Entrar">
+            </form>
+        </div>
+        <div class="search-form">
+            <form action="#" method="get">
+                <input type="text" name="search" placeholder="Pesquisar...">
+                <input type="submit" value="Buscar">
+            </form>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="platform">
+            <div class="news-item">
+                <h2>Notícias PlayStation</h2>
+                <div class="news">
+                    <h3>PlayStation anuncia novo exclusivo para PS5</h3>
+                    <p>A Sony revelou um novo jogo exclusivo para o PlayStation 5, prometendo gráficos impressionantes e uma história envolvente.</p>
+                    <img src="https://via.placeholder.com/300" alt="PlayStation Exclusivo">
+                </div>
+                <div class="news">
+                    <h3>Atualização do sistema 10.0 do PlayStation traz novos recursos</h3>
+                    <p>O sistema operacional do PlayStation recebeu uma atualização importante, incluindo melhorias na interface do usuário e novas funcionalidades.</p>
+                    <img src="https://via.placeholder.com/300" alt="Atualização do PlayStation">
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h2>Notícias Xbox</h2>
+                <div class="news">
+                    <h3>Microsoft revela detalhes sobre o próximo Xbox Series X</h3>
+                    <p>A Microsoft divulgou mais informações sobre o próximo console Xbox Series X, incluindo especificações técnicas e recursos exclusivos.</p>
+                    <img src="https://via.placeholder.com/300" alt="Novo Xbox Series X">
+                </div>
+                <div class="news">
+                    <h3>Nova atualização do Xbox Game Pass adiciona mais jogos</h3>
+                    <p>O serviço Xbox Game Pass recebeu uma nova atualização com a adição de diversos jogos populares, aumentando ainda mais o catálogo disponível para assinantes.</p>
+                    <img src="https://via.placeholder.com/300" alt="Atualização do Xbox Game Pass">
+                </div>
+            </div>
+
+            <div class="news-item">
+                <h2>Notícias Nintendo</h2>
+                <div class="news">
+                    <h3>Nintendo anuncia novo título da série Zelda</h3>
+                    <p>A Nintendo surpreende os fãs ao revelar um novo título da série Zelda, prometendo uma experiência única e inovadora.</p>
+                    <img src="https://via.placeholder.com/300" alt="Novo título da série Zelda">
+                </div>
+                <div class="news">
+                    <h3>Atualização do Nintendo Switch traz melhorias de desempenho</h3>
+                    <p>A última atualização de firmware do Nintendo Switch traz melhorias significativas de desempenho, garantindo uma experiência de jogo mais suave para os usuários.</p>
+                    <img src="https://via.placeholder.com/300" alt="Atualização do Nintendo Switch">
+                </div>
+            </div>
+        </section>
+
+        <section class="comments">
+            <h2>Comentários de Jogadores</h2>
+            <div class="comment">
+                <h3>Gamer123</h3>
+                <p>Estou ansioso para jogar o novo exclusivo do PlayStation 5! Parece que a Sony está realmente investindo em grandes experiências para os jogadores.</p>
+            </div>
+            <div class="comment">
+                <h3>MestreGamer99</h3>
+                <p>O Xbox Series X promete ser um console incrível com todas essas novas atualizações. Mal posso esperar para ver o que a Microsoft tem reservado para nós!</p>
+            </div>
+            <div class="comment">
+                <h3>ZeldaFanatic</h3>
+                <p>Zelda sempre foi uma das minhas séries favoritas da Nintendo. Estou emocionado com o anúncio do novo título. Espero que seja tão épico quanto os anteriores!</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        © Todos Direitos Reservados Gleydson Passos 2024
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
