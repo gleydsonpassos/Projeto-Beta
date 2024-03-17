@@ -9,122 +9,129 @@
         /* Estilos CSS para o cabeçalho */
         body {
             font-family: Arial, sans-serif;
-            background-color: #222;
             margin: 0;
             padding: 0;
             color: #fff;
+            overflow-x: hidden; /* Impede a rolagem horizontal */
+            background: linear-gradient(to bottom, #00ff80, #ff00ff, #0080ff); /* Fundo animado */
+            background-size: 100% 200%; /* Tamanho do gradiente */
+            animation: gradientBackground 10s ease infinite alternate; /* Animação do fundo */
         }
+
+        @keyframes gradientBackground {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 0% 100%; }
+        }
+
         header {
             background-color: #333;
             color: #fff;
-            text-align: center;
             padding: 1rem;
             font-family: 'Press Start 2P', cursive; /* Fonte chamativa */
-            transition: background-color 0.3s ease-in-out;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        header:hover {
-            background-color: #555;
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
         }
-        .login {
-            text-align: center;
-            margin-bottom: 1rem;
+        nav li {
+            margin-right: 20px;
         }
-        .login input[type="text"],
-        .login input[type="password"],
-        .login input[type="submit"] {
-            width: 200px;
-            padding: 0.5rem;
-            margin-right: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            color: #333;
-        }
-        .login input[type="submit"] {
-            background-color: #333;
+        nav a {
+            text-decoration: none;
             color: #fff;
-            cursor: pointer;
-        }
-        .login input[type="submit"]:hover {
-            background-color: #555;
-        }
-        /* Estilos CSS para as seções de novidades */
-        .platform {
-            margin-bottom: 2rem;
-            transition: transform 0.3s ease-in-out;
-            text-align: center; /* Centraliza o conteúdo das seções */
-        }
-        .platform:hover {
-            transform: scale(1.05);
-        }
-        .platform h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
+            font-size: 16px;
             transition: color 0.3s ease-in-out;
-            text-align: center; /* Centraliza o texto */
         }
-        .platform .news {
+        nav a:hover {
+            color: #4caf50;
+        }
+
+        /* Restante do CSS permanece o mesmo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .platform {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .news-item {
             background-color: #444;
             border-radius: 5px;
-            padding: 1rem;
-            transition: box-shadow 0.3s ease-in-out;
+            padding: 20px;
+            width: calc(33.33% - 20px); /* Ajuste para ocupar 1/3 da largura com um espaçamento de 20px entre os itens */
+            text-align: left;
+            margin-bottom: 20px; /* Adiciona espaço entre as notícias */
         }
-        .platform .news:hover {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .news-item h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease-in-out;
         }
-        .platform .news h3 {
+        .news-item:hover h2 {
+            color: #4caf50; /* Altera a cor do título ao passar o mouse */
+        }
+        .news-item h3 {
             font-size: 1.1rem;
             margin-bottom: 0.5rem;
             transition: color 0.3s ease-in-out;
         }
-        .platform .news p {
+        .news-item p {
             margin-bottom: 0.5rem;
+            transition: color 0.3s ease-in-out;
         }
-        .platform .news a {
+        .news-item a {
             color: #007bff;
             text-decoration: none;
             transition: color 0.3s ease-in-out;
         }
-        .platform .news a:hover {
+        .news-item a:hover {
             color: #0056b3;
             text-decoration: underline;
         }
-        /* Estilos CSS para as imagens */
-        .platform .news img {
+        .news-item img {
             max-width: 100%;
             border-radius: 5px;
             margin-top: 10px;
+            transition: transform 0.3s ease-in-out;
         }
-        /* Estilos CSS para a barra de pesquisa */
-        .search-bar {
-            margin-top: 1rem;
-            text-align: center;
+        .news-item img:hover {
+            transform: scale(1.05); /* Aumenta o tamanho da imagem ao passar o mouse */
         }
-        .search-bar input[type="text"] {
-            width: 300px;
-            padding: 0.5rem;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            background-color: #fff;
-            color: #333;
-        }
-        .search-bar input[type="submit"] {
+
+        footer {
             background-color: #333;
             color: #fff;
-            padding: 0.5rem 1rem;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .search-bar input[type="submit"]:hover {
-            background-color: #555;
+            text-align: center;
+            padding: 1rem;
+            font-size: 14px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Gleydson Games</h1>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#videos">Vídeos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+            </ul>
+        </nav>
         <div class="login">
             <form action="/login" method="post">
                 <input type="text" name="username" placeholder="Usuário" required>
@@ -132,9 +139,9 @@
                 <input type="submit" value="Entrar">
             </form>
         </div>
-        <div class="search-bar">
-            <form action="/search" method="get">
-                <input type="text" name="q" placeholder="Pesquisar...">
+        <div class="search-form">
+            <form action="#" method="get">
+                <input type="text" name="search" placeholder="Pesquisar...">
                 <input type="submit" value="Buscar">
             </form>
         </div>
@@ -142,22 +149,52 @@
 
     <div class="container">
         <section class="platform">
-            <h2>Novidades PlayStation</h2>
-            <!-- Conteúdo omitido para brevidade -->
-        </section>
+            <div class="news-item">
+                <h2>Notícias PlayStation</h2>
+                <div class="news">
+                    <h3>PlayStation anuncia novo exclusivo para PS5</h3>
+                    <p>A Sony revelou um novo jogo exclusivo para o PlayStation 5, prometendo gráficos impressionantes e uma história envolvente.</p>
+                    <img src="https://via.placeholder.com/300" alt="PlayStation Exclusivo">
+                </div>
+                <div class="news">
+                    <h3>Atualização do sistema 10.0 do PlayStation traz novos recursos</h3>
+                    <p>O sistema operacional do PlayStation recebeu uma atualização importante, incluindo melhorias na interface do usuário e novas funcionalidades.</p>
+                    <img src="https://via.placeholder.com/300" alt="Atualização do PlayStation">
+                </div>
+            </div>
 
-        <section class="platform">
-            <h2>Novidades Xbox</h2>
-            <!-- Conteúdo omitido para brevidade -->
-        </section>
+            <div class="news-item">
+                <h2>Notícias Xbox</h2>
+                <div class="news">
+                    <h3>Microsoft revela detalhes sobre o próximo Xbox Series X</h3>
+                    <p>A Microsoft divulgou mais informações sobre o próximo console Xbox Series X, incluindo especificações técnicas e recursos exclusivos.</p>
+                    <img src="https://via.placeholder.com/300" alt="Novo Xbox Series X">
+                </div>
+                <div class="news">
+                    <h3>Nova atualização do Xbox Game Pass adiciona mais jogos</h3>
+                    <p>O serviço Xbox Game Pass recebeu uma nova atualização com a adição de diversos jogos populares, aumentando ainda mais o catálogo disponível para assinantes.</p>
+                    <img src="https://via.placeholder.com/300" alt="Atualização do Xbox Game Pass">
+                </div>
+            </div>
 
-        <section class="platform">
-            <h2>Novidades Nintendo</h2>
-            <!-- Conteúdo omitido para brevidade -->
+            <div class="news-item">
+                <h2>Notícias Nintendo</h2>
+                <div class="news">
+                    <h3>Nintendo anuncia novo título da série Zelda</h3>
+                    <p>A Nintendo surpreende os fãs ao revelar um novo título da série Zelda, prometendo uma experiência única e inovadora.</p>
+                    <img src="https://via.placeholder.com/300" alt="Novo título da série Zelda">
+                </div>
+                <div class="news">
+                    <h3>Atualização do Nintendo Switch traz melhorias de desempenho</h3>
+                    <p>A última atualização de firmware do Nintendo Switch traz melhorias significativas de desempenho, garantindo uma experiência de jogo mais suave para os usuários.</p>
+                    <img src="https://via.placeholder.com/300" alt="Atualização do Nintendo Switch">
+                </div>
+            </div>
         </section>
     </div>
+
+    <footer>
+        Todos Direitos Reservados Gleydson Passos 2024
+    </footer>
 </body>
 </html>
-
-
-
