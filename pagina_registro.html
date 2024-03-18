@@ -6,20 +6,17 @@
     <title>Criar Conta - Gleydson Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        /* Estilos CSS para a página de registro */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             color: #fff;
-            /* Fundo animado gradiente colorido */
             background: linear-gradient(45deg, #ff00ff, #00ffff, #00ff00, #ffff00);
-            background-size: 400% 400%; /* Tamanho do gradiente */
-            animation: gradientBackground 10s ease infinite; /* Animação do fundo */
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
         }
 
-        /* Animação do fundo gradiente */
-        @keyframes gradientBackground {
+        @keyframes gradientBG {
             0% {
                 background-position: 0% 50%;
             }
@@ -36,30 +33,25 @@
             margin: 0 auto;
             padding: 20px;
             text-align: center;
-            margin-top: 2rem; /* Ajusta o espaçamento do conteúdo abaixo da barra superior */
+            margin-top: 2rem;
         }
-
         h1 {
             font-family: 'Press Start 2P', cursive;
             font-size: 2rem;
-            margin-bottom: 1rem; /* Ajusta o espaçamento abaixo do título */
+            margin-bottom: 1rem;
         }
-
         form {
             margin-top: 20px;
         }
-
         label {
             display: block;
             margin-bottom: 5px;
             font-size: 1.1rem;
-            transition: color 0.3s ease-in-out; /* Efeito de cor ao passar o mouse */
+            transition: color 0.3s ease-in-out;
         }
-
         label:hover {
-            color: #4caf50; /* Cor alterada ao passar o mouse */
+            color: #4caf50;
         }
-
         input[type="text"],
         input[type="password"],
         input[type="date"],
@@ -71,7 +63,6 @@
             border: 1px solid #aaa;
             box-sizing: border-box;
         }
-
         input[type="submit"] {
             background-color: #4caf50;
             color: #fff;
@@ -82,11 +73,9 @@
             cursor: pointer;
             transition: background-color 0.3s ease-in-out;
         }
-
         input[type="submit"]:hover {
             background-color: #45a049;
         }
-
         footer {
             background-color: #333;
             color: #fff;
@@ -97,7 +86,6 @@
             bottom: 0;
             width: 100%;
         }
-
         .top-bar {
             background-color: rgba(0, 0, 0, 0.5);
             color: #fff;
@@ -105,18 +93,20 @@
             text-align: center;
             position: fixed;
             width: 100%;
-            top: 0; /* Ajusta a posição da barra superior */
+            top: 0;
             z-index: 999;
         }
-
         .top-bar a {
             color: #fff;
             text-decoration: none;
             transition: color 0.3s ease-in-out;
         }
-
         .top-bar a:hover {
             color: #4caf50;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -126,16 +116,16 @@
     </div>
     <div class="container">
         <h1>Criar Conta - <span style="color: #ff00ff;">Gleydson</span> <span style="color: #00ffff;">Games</span></h1>
-        <form action="#" method="post">
-            <label for="username">Usuário:</label>
-            <input type="text" id="username" name="username" required>
+        <form action="#" method="post" id="registration-form">
+            <label for="username">Email:</label>
+            <input type="text" id="username" name="username" placeholder="Digite seu email" required>
 
             <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
             <small>Dica: Sua senha deve conter pelo menos 8 caracteres, incluindo letras maiúsculas, minúsculas, números e caracteres especiais.</small>
 
             <label for="confirm_password">Confirmar Senha:</label>
-            <input type="password" id="confirm_password" name="confirm_password" required>
+            <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirme sua senha" required>
 
             <label for="state">Estado:</label>
             <select id="state" name="state" required>
@@ -170,19 +160,47 @@
             </select>
 
             <label for="city">Cidade:</label>
-            <input type="text" id="city" name="city" required>
+            <input type="text" id="city" name="city" placeholder="Digite sua cidade" required>
 
             <label for="birthdate">Data de Nascimento:</label>
-            <input type="date" id="birthdate" name="birthdate" required>
+            <input type="date" id="birthdate" name="birthdate" placeholder="Digite sua data de nascimento" required>
 
             <input type="submit" value="Criar Conta">
         </form>
+        <div class="error-message" id="error-message" style="display: none;">Por favor, preencha todos os campos.</div>
     </div>
     <footer>
         © Todos Direitos Reservados Gleydson Passos 2024
     </footer>
+    <script>
+        document.getElementById('registration-form').addEventListener('submit', function(event) {
+            var isValid = validateForm();
+
+            if (!isValid) {
+                document.getElementById('error-message').style.display = 'block';
+                event.preventDefault();
+            }
+        });
+
+        function validateForm() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm_password').value;
+            var state = document.getElementById('state').value;
+            var city = document.getElementById('city').value;
+            var birthdate = document.getElementById('birthdate').value;
+
+            if (username === '' || password === '' || confirmPassword === '' || state === '' || city === '' || birthdate === '') {
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>
+
+
 
 
 
